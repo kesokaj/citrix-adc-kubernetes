@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: guestbook-ingress
+  annotations:
+   kubernetes.io/ingress.class: "citrix"
+spec:
+  rules:
+  - host:  sample.k8sadc.hbgadm.hbgstad.se
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: frontend
+          servicePort: 80
